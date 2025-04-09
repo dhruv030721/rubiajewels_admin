@@ -1,0 +1,117 @@
+.processing-order-list {
+  margin: 20px;
+  padding: 20px;
+  background-color: #ffffff;
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+  overflow-y: auto;
+  height: 100vh;
+}
+
+.processing-order-list h1 {
+  font-size: 28px;
+  margin-bottom: 15px;
+  color: black;
+}
+
+.processing-order-list p {
+  font-size: 16px;
+  color: #555;
+  margin-bottom: 20px;
+}
+
+.processing-order-controls {
+  display: flex;
+  gap: 15px;
+  margin-bottom: 25px;
+  align-items: center;
+}
+
+.processing-order-controls select {
+  padding: 10px;
+  border: 1px solid #ccc;
+  font-size: 14px;
+  background-color: #f9f9f9;
+}
+
+.processing-order-controls .processing-go-button,
+.processing-order-controls .processing-excel-button {
+  padding: 10px 20px;
+  border: none;
+  color: #fff;
+  font-size: 14px;
+  cursor: pointer;
+}
+
+.processing-order-controls .processing-go-button {
+  background-color: #2A3E5C;
+}
+
+.processing-order-table {
+  width: 100%;
+  border-collapse: collapse;
+  margin-top: 20px;
+  background-color: #fff;
+  overflow: hidden;
+  box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+}
+
+.processing-order-table th,
+.processing-order-table td {
+  padding: 14px 18px;
+  text-align: left;
+  border-bottom: 1px solid #eaeaea;
+}
+
+.processing-order-table th {
+  background-color: #f0f0f0;
+  font-size: 14px;
+  font-weight: bold;
+  text-transform: uppercase;
+  color: #333;
+}
+
+.processing-order-info {
+  font-size: 14px;
+  color: #333;
+  line-height: 1.6;
+}
+
+.processing-processing-status-badge {
+  display: inline-block;
+  padding: 5px 10px;
+  font-size: 12px;
+  color: #ff9500;
+  background-color: #f7d87c;
+  border-radius: 12px;
+  margin-top: 8px;
+  font-weight: bold;
+}
+
+.processing-product-info {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+}
+
+.processing-product-info img {
+  width: 60px;
+  height: 60px;
+  object-fit: cover;
+  border-radius: 4px;
+  border: 1px solid #ddd;
+}
+
+.processing-detail-button {
+  background-color: #2A3E5C;
+  color: #fff;
+  padding: 10px 14px;
+  border: none;
+  cursor: pointer;
+  font-size: 14px;
+  transition: background-color 0.3s ease;
+}
+
+.order-details {
+  overflow-y: auto;
+  height: 120px;
+}

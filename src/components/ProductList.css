@@ -1,0 +1,84 @@
+.table-container {
+  padding: 20px;
+  background-color: #ffffff;
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+}
+
+.custom-table {
+  width: 100%;
+  border-collapse: collapse;
+  background-color: white;
+  font-size: 14px;
+  color: #151542;
+  text-align: left;
+}
+
+.custom-table th,
+.custom-table td {
+  padding: 12px;
+  border-bottom: 1px solid #ddd;
+}
+
+.custom-table th {
+  font-weight: bold;
+  color: #151542;
+}
+
+
+.status-dropdown {
+  padding: 5px 10px;
+  border-radius: 10px;
+  border: 1px solid #333;
+  font-weight: bold;
+  cursor: pointer;
+  text-align: center;
+  appearance: none;
+  background-color: transparent;
+  color: #333;
+}
+
+.status-dropdown[value="Publish"] {
+  background-color: #28a745;
+  color: white;
+}
+
+.status-dropdown[value="Unpublish"] {
+  background-color: #ffc107;
+  color: black;
+}
+
+.status-dropdown:hover {
+  opacity: 0.9;
+}
+
+.status-dropdown:focus {
+  outline: none;
+}
+
+.status-dropdown select {
+  background-color: transparent;
+  color: inherit;
+  border: none;
+  padding: 0;
+  font: inherit;
+  cursor: pointer;
+}
+
+.price-original{
+  text-decoration: line-through;
+}
+
+.stock {
+  font-weight: bold;
+  color: #333;
+}
+
+.productlist-edit,  
+.productlist-delete {
+  border: none;
+  background-color: white;
+  color: #333;
+  font-size: 20px;
+  cursor: pointer;
+  padding: 0 10px;
+}

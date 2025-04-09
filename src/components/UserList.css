@@ -1,0 +1,128 @@
+.user-list-container {
+  background-color: #f9fafc;
+  padding: 20px;
+  max-width: 1200px;
+  margin: 0 auto;
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+}
+
+.user-list-header h1 {
+  font-size: 24px;
+  color: #151542;
+}
+
+.user-list-header p {
+  font-size: 14px;
+  color: #888;
+  margin: 10px 0;
+}
+
+.user-count {
+  margin: 15px 0;
+  font-size: 16px;
+  color: #555;
+}
+
+.table-options {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  margin-bottom: 15px;
+}
+
+.table-options label {
+  font-size: 16px;
+  color: #333;
+  margin-right: 15px;
+}
+
+.table-options select {
+  padding: 5px;
+  font-size: 14px;
+  border: 1px solid #ddd;
+}
+
+.table-options .search-box {
+  padding: 5px;
+  font-size: 14px;
+  border: 1px solid #ddd;
+  border-radius: 4px;
+  width: 200px;
+}
+
+.user-table {
+  width: 100%;
+  border-collapse: collapse;
+  font-size: 14px;
+}
+
+.user-table thead {
+  background-color: #f0f0f0;
+}
+
+.user-table th,
+.user-table td {
+  padding: 10px;
+  text-align: left;
+  border: 1px solid #ddd;
+}
+
+.user-table th {
+  color: black;
+}
+
+.user-table td {
+  color: #666;
+}
+
+.status-button {
+  padding: 5px 10px;
+  border-radius: 15px;
+  font-size: 12px;
+  font-weight: bold;
+  border: none;
+  cursor: pointer;
+  text-align: center;
+}
+
+.status-button.active {
+  background-color: #d4edda;
+  color: #155724;
+}
+
+.status-button.inactive {
+  background-color: #f8d7da;
+  color: #721c24;
+}
+
+.status-button:hover {
+  opacity: 0.8;
+  transition: opacity 0.3s ease;
+}
+
+.pagination {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  margin-top: 10px;
+}
+
+.pagination button {
+  padding: 5px 10px;
+  margin: 0 5px;
+  border: 1px solid #ddd;
+  background-color: #fff;
+  border-radius: 4px;
+  cursor: pointer;
+  font-size: 14px;
+  color: #555;
+}
+
+.pagination button:hover {
+  background-color: #f2f2f2;
+}
+
+.pagination span {
+  font-size: 14px;
+  color: #555;
+}

@@ -1,0 +1,386 @@
+import React, { useState } from "react";
+import axios from "axios";
+import "./AddProduct.css";
+import { useEffect } from "react";
+
+const AddProduct = () => {
+  const [formData, setFormData] = useState({
+    name: "",
+    category: "",
+    subcategory: "",
+  });
+  const [files, setFiles] = useState({
+    goldImage: null,
+    roseGoldImage: null,
+    silverImage: null,
+    hoverImage: null,
+  });
+
+  const handleFileChange = (e) => {
+    const { name, files } = e.target;
+    setFiles((prevFiles) => ({
+      ...prevFiles,
+      [name]: Array.from(files),
+    }));
+  };
+
+  const [categories, setCategories] = useState({});
+  const [subcategories, setSubcategories] = useState([]);
+
+  useEffect(() => {
+    const fetchCategories = async () => {
+      const response = await axios.get("https://backend.rubiajewels.com/api/categories");
+      setCategories(response.data);
+    };
+    fetchCategories();
+  }, []);
+
+  const handleInputChange = (e) => {
+    setFormData({ ...formData, [e.target.name]: e.target.value });
+  };
+
+  const handleCategoryChange = (e) => {
+    const selectedCategory = e.target.value;
+    setFormData({ ...formData, category: selectedCategory, subcategory: "" });
+    setSubcategories(categories[selectedCategory] || []);
+  };
+
+  const handleSubmit = async (e) => {
+    e.preventDefault();
+    const data = new FormData();
+    data.append("name", formData.name);
+    data.append("category", formData.category);
+    data.append("subcategory", formData.subcategory);
+  
+    // Safely append multiple files
+    if (files.goldImage) {
+      files.goldImage.forEach((file) => data.append("goldImage", file));
+    }
+    if (files.roseGoldImage) {
+      files.roseGoldImage.forEach((file) => data.append("roseGoldImage", file));
+    }
+    if (files.silverImage) {
+      files.silverImage.forEach((file) => data.append("silverImage", file));
+    }
+  
+    if (files.hoverImage && files.hoverImage.length > 0) {
+      data.append("hoverImage", files.hoverImage[0]); // Append the first file only
+    }
+  
+    try {
+      const response = await axios.post(
+        "https://backend.rubiajewels.com/api/products",
+        data,
+        {
+          headers: { "Content-Type": "multipart/form-data" },
+        }
+      );
+      alert("product has been added");
+      console.log("Product added:", response.data);
+    } catch (error) {
+      console.error("Error adding product:", error);
+      console.error(error.response?.data); // Log backend error response if available
+    }
+  };
+  
+  
+
+  return (
+    <div className="add-product-container">
+      <form className="add-product-form" onSubmit={handleSubmit}>
+        <div className="left-section">
+          <div className="product-name">
+            <h3 className="add-product-h3">Product Name</h3>
+            <div className="two-form-group-row">
+              <div className="form-group">
+                <label>Category</label>
+                <select
+                  name="category"
+                  value={formData.category}
+                  onChange={handleCategoryChange}
+                  required
+                >
+                  <option value="">Select Category</option>
+                  {Object.keys(categories).map((category) => (
+                    <option key={category} value={category}>
+                      {category}
+                    </option>
+                  ))}
+                </select>
+              </div>
+
+              <div className="form-group">
+                <label>Subcategory</label>
+                <select
+                  name="subcategory"
+                  value={formData.subcategory}
+                  onChange={(e) => handleInputChange(e)}
+                  required
+                  disabled={!formData.category}
+                >
+                  <option value="">Select Subcategory</option>
+                  {subcategories.map((subcategory) => (
+                    <option key={subcategory} value={subcategory}>
+                      {subcategory}
+                    </option>
+                  ))}
+                </select>
+              </div>
+            </div>
+          </div>
+
+          <h3 className="add-product-h3">Product Details</h3>
+          <div className="price">
+            <div className="two-form-group-row">
+              <div className="form-group">
+                <label>Product Name</label>
+                <input
+                  type="text"
+                  name="name"
+                  placeholder="Type here"
+                  value={formData.name}
+                  onChange={handleInputChange}
+                />
+              </div>
+              <div className="form-group">
+                <label>Product Weight</label>
+                <input type="text" placeholder="Type here" />
+              </div>
+              <div className="form-group">
+                <label>Product Id</label>
+                <input type="text" placeholder="Type here" />
+              </div>
+              <div className="form-group">
+                <label>Product Description</label>
+                <textarea rows="5" placeholder="Type here"></textarea>
+              </div>
+            </div>
+          </div>
+
+          <div className="height-width">
+            <h3 className="add-product-h3">Gold Weight</h3>
+            <div className="three-form-group-row">
+              <div className="form-group">
+                <label>Gold Weight (10k)</label>
+                <input type="text" placeholder="Type here" />
+              </div>
+              <div className="form-group">
+                <label>Gold Weight (14k)</label>
+                <input type="text" placeholder="Type here" />
+              </div>
+              <div className="form-group">
+                <label>Gold Weight (18k)</label>
+                <input type="text" placeholder="Type here" />
+              </div>
+            </div>
+
+            <h3 className="add-product-h3">Diamond Discount / Process</h3>
+            <div className="price">
+              <div className="two-form-group-row">
+                <div className="form-group">
+                  <label>Discount (%)</label>
+                  <input type="text" placeholder="Type here" />
+                </div>
+                <div className="form-group">
+                  <label>Diamond Making Process</label>
+                  <input type="text" placeholder="Type here" />
+                </div>
+              </div>
+            </div>
+          </div>
+
+          <div className="height-width">
+            <h3 className="add-product-h3">Diamond Details</h3>
+            <div className="three-form-group-row">
+              <div className="form-group">
+                <label>Diamond Color</label>
+                <input type="text" placeholder="Type here" />
+              </div>
+              <div className="form-group">
+                <label>Number Of Diamond</label>
+                <input type="text" placeholder="Type here" />
+              </div>
+              <div className="form-group">
+                <label>Diamond Cut Grade</label>
+                <input type="text" placeholder="Type here" />
+              </div>
+              <div className="form-group">
+                <label>Diamond Type</label>
+                <input type="text" placeholder="Type here" />
+              </div>
+              <div className="form-group">
+                <label>Diamond Price</label>
+                <input type="text" placeholder="Type here" />
+              </div>
+              <div className="form-group">
+                <label>Diamond Weight</label>
+                <input type="text" placeholder="Type here" />
+              </div>
+            </div>
+          </div>
+
+          <div className="height-width">
+            <h3 className="add-product-h3">Stone Details</h3>
+            <div className="three-form-group-row">
+              <div className="form-group">
+                <label>Stone piece</label>
+                <input type="text" placeholder="Type here" />
+              </div>
+              <div className="form-group">
+                <label>Per Piece Price</label>
+                <input type="text" placeholder="Type here" />
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <div className="right-section">
+          <div className="form-group">
+            <h3>Gold Product Image</h3>
+            <input
+              type="file"
+              name="goldImage"
+              onChange={handleFileChange}
+              required
+              multiple
+            />
+          </div>
+          <div className="form-group">
+            <h3>RoseGold Product Image</h3>
+            <input
+              type="file"
+              name="roseGoldImage"
+              onChange={handleFileChange}
+              multiple
+              required
+            />
+          </div>
+          <div className="form-group">
+            <h3>Silver Product Image</h3>
+            <input
+              type="file"
+              name="silverImage"
+              onChange={handleFileChange}
+              multiple
+              required
+            />
+          </div>
+          <div className="form-group">
+            <h3>Hover Product Image</h3>
+            <input
+              type="file"
+              name="hoverImage"
+              onChange={handleFileChange}
+              required
+            />
+          </div>
+
+          <div className="form-group">
+            <h3 className="add-product-h3">Select Carat</h3>
+            <div className="checkbox-group">
+              <div>
+                <input type="checkbox" name="caret" value="10k" />
+                <label htmlFor="1">10K</label>
+              </div>
+              <div>
+                <input type="checkbox" name="caret" value="14k" />
+                <label htmlFor="3">14K</label>
+              </div>
+              <div>
+                <input type="checkbox" name="caret" value="18k" />
+                <label htmlFor="5">18K</label>
+              </div>
+            </div>
+          </div>
+
+          <div className="form-group">
+            <h3 className="add-product-h3">Select Color</h3>
+            <div className="checkbox-group">
+              <div>
+                <input type="checkbox" name="caret" value="yellow gold" />
+                <label htmlFor="1">Yellow Gold</label>
+              </div>
+              <div>
+                <input type="checkbox" name="caret" value="rose gold" />
+                <label htmlFor="3">Rose Gold</label>
+              </div>
+              <div>
+                <input type="checkbox" name="caret" value="white gold" />
+                <label htmlFor="5">White Gold</label>
+              </div>
+            </div>
+          </div>
+
+          <div className="form-group">
+            <h3 className="add-product-h3">Select Stone</h3>
+            <div className="checkbox-group">
+              <div>
+                <input type="checkbox" name="caret" value="Mother-of-pearl " />
+                <label htmlFor="1">Mother-of-pearl</label>
+              </div>
+              <div>
+                <input type="checkbox" name="caret" value="Malachite" />
+                <label htmlFor="3">Malachite</label>
+              </div>
+              <div>
+                <input type="checkbox" name="caret" value="Tiger Eye" />
+                <label htmlFor="5">Tiger Eye</label>
+              </div>
+              <div>
+                <input type="checkbox" name="caret" value="Onyx" />
+                <label htmlFor="5">Onyx</label>
+              </div>
+              <div>
+                <input type="checkbox" name="caret" value="Turquoise " />
+                <label htmlFor="5">Turquoise </label>
+              </div>
+              <div>
+                <input type="checkbox" name="caret" value="Diamond" />
+                <label htmlFor="5">Diamond</label>
+              </div>
+            </div>
+          </div>
+
+          <div className="height-width">
+            <h3 className="add-product-h3">Side Diamond Details</h3>
+            <div className="three-form-group-row">
+              <div className="form-group">
+                <label>Side Diamond Color</label>
+                <input type="text" placeholder="Type here" />
+              </div>
+              <div className="form-group">
+                <label>Number Of Diamond</label>
+                <input type="text" placeholder="Type here" />
+              </div>
+              <div className="form-group">
+                <label>Side Diamond Shape</label>
+                <input type="text" placeholder="Type here" />
+              </div>
+              <div className="form-group">
+                <label>Side Diamond Cut Grade</label>
+                <input type="text" placeholder="Type here" />
+              </div>
+              <div className="form-group">
+                <label>Side Diamond Type</label>
+                <input type="text" placeholder="Type here" />
+              </div>
+              <div className="form-group">
+                <label>Side Diamond Weight</label>
+                <input type="text" placeholder="Type here" />
+              </div>
+              <div className="form-group">
+                <label>Total Diamond Weight</label>
+                <input type="text" placeholder="Type here" />
+              </div>
+            </div>
+          </div>
+          <button className="public-button" type="submit">
+            Publish
+          </button>
+        </div>
+      </form>
+    </div>
+  );
+};
+
+export default AddProduct;

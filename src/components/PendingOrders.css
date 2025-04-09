@@ -1,0 +1,116 @@
+.pending-order-list {
+  margin: 20px;
+  padding: 20px;
+  background-color: #ffffff;
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+  overflow-y: auto;
+  height: 100vh;
+}
+
+.pending-order-list h1 {
+  font-size: 28px;
+  margin-bottom: 15px;
+  color: black;
+}
+
+.pending-order-list p {
+  font-size: 16px;
+  color: #555;
+  margin-bottom: 20px;
+}
+
+.pending-order-controls {
+  display: flex;
+  gap: 15px;
+  margin-bottom: 25px;
+  align-items: center;
+}
+
+.pending-order-controls select {
+  padding: 10px;
+  border: 1px solid #ccc;
+  font-size: 14px;
+  background-color: #f9f9f9;
+}
+
+.pending-order-controls .pending-go-button,
+.pending-order-controls .pending-excel-button {
+  padding: 10px 20px;
+  border: none;
+  color: #fff;
+  font-size: 14px;
+  cursor: pointer;
+}
+
+.pending-order-controls .pending-go-button {
+  background-color: #2A3E5C;
+}
+
+.pending-order-table {
+  width: 100%;
+  border-collapse: collapse;
+  margin-top: 20px;
+  background-color: #fff;
+  overflow: hidden;
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+}
+
+.pending-order-table th,
+.pending-order-table td {
+  padding: 14px 18px;
+  text-align: left;
+  border-bottom: 1px solid #eaeaea;
+}
+
+.pending-order-table th {
+  background-color: #f0f0f0;
+  font-size: 14px;
+  text-transform: uppercase;
+  color: #333;
+}
+
+.pending-order-info {
+  font-size: 14px;
+  color: #333;
+  line-height: 1.6;
+}
+
+.pending-status-badge {
+  display: inline-block;
+  padding: 5px 10px;
+  font-size: 12px;
+  color: #ef1010;
+  background-color: #f08484;
+  border-radius: 12px;
+  margin-top: 8px;
+  font-weight: bold;
+}
+
+.pending-product-info {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+}
+
+.pending-product-info-img {
+  width: 60px;
+  height: 60px;
+  object-fit: cover;
+  border-radius: 4px;
+  border: 1px solid #ddd;
+}
+
+.pending-detail-button {
+  background-color: #2A3E5C;
+  color: #fff;
+  padding: 10px 14px;
+  border: none;
+  cursor: pointer;
+  font-size: 14px;
+  transition: background-color 0.3s ease;
+}
+
+.order-details {
+  overflow-y: auto;
+  height: 120px;
+}

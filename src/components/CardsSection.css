@@ -1,0 +1,7 @@
+.cards-section {
+  display: flex;
+  gap: 20px;
+  padding: 20px;
+  background-color: #F5F5F5;
+  justify-content: space-between;
+}

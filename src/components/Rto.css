@@ -1,0 +1,135 @@
+.rto-order-list {
+  margin: 20px;
+  padding: 20px;
+  background-color: #ffffff;
+  border-radius: 8px;
+  box-shadow: 0 4px 8px rgba(162, 0, 255, 0.2);
+}
+
+.rto-order-list h1 {
+  font-size: 28px;
+  margin-bottom: 15px;
+  color: #151542;
+}
+
+.rto-order-list p {
+  font-size: 16px;
+  color: #555;
+  margin-bottom: 20px;
+}
+
+.rto-order-controls {
+  display: flex;
+  gap: 15px;
+  margin-bottom: 25px;
+  align-items: center;
+}
+
+.rto-order-controls select {
+  padding: 10px;
+  border: 1px solid #ccc;
+  border-radius: 4px;
+  font-size: 14px;
+  background-color: #f9f9f9;
+}
+
+.rto-order-controls .rto-go-button,
+.rto-order-controls .rto-excel-button {
+  padding: 10px 20px;
+  border: none;
+  border-radius: 4px;
+  color: #fff;
+  font-size: 14px;
+  cursor: pointer;
+}
+
+.rto-order-controls .rto-go-button {
+  background-color: #977cdd;
+}
+
+.rto-order-controls .rto-go-button:hover {
+  background-color: #b299f0;   
+}
+
+.rto-order-controls .rto-excel-button {
+  background-color: #977cdd;
+}
+
+.rto-order-controls .rto-excel-button:hover {
+  background-color: #b299f0;
+}
+
+.rto-order-table {
+  width: 100%;
+  border-collapse: collapse;
+  margin-top: 20px;
+  background-color: #fff;
+  border-radius: 8px;
+  overflow: hidden;
+  box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+}
+
+.rto-order-table th,
+.rto-order-table td {
+  padding: 14px 18px;
+  text-align: left;
+  border-bottom: 1px solid #eaeaea;
+}
+
+.rto-order-table th {
+  background-color: #e9e1ff;
+  font-size: 14px;
+  font-weight: bold;
+  text-transform: uppercase;
+  color: #333;
+}
+
+.rto-order-table tbody tr:hover {
+  background-color: #f9f7ff9e;
+}
+
+.rto-order-info {
+  font-size: 14px;
+  color: #333;
+  line-height: 1.6;
+}
+
+.rto-cancle-status-badge {
+  display: inline-block;
+  padding: 5px 10px;
+  font-size: 12px;
+  color: #ff1e1e;
+  background-color: #f8b7b7;
+  border-radius: 12px;
+  margin-top: 8px;
+  font-weight: bold;
+}
+
+.rto-product-info {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+}
+
+.rto-product-info img {
+  width: 60px;
+  height: 60px;
+  object-fit: cover;
+  border-radius: 4px;
+  border: 1px solid #ddd;
+}
+
+.rto-detail-button {
+  background-color: #715ca7;
+  color: #fff;
+  padding: 10px 14px;
+  border: none;
+  border-radius: 4px;
+  cursor: pointer;
+  font-size: 14px;
+  transition: background-color 0.3s ease;
+}
+
+.rto-detail-button:hover {
+  background-color: #977cdd;
+}

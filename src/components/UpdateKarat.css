@@ -1,0 +1,95 @@
+body {
+  margin: 0;
+  padding: 0;
+  background-color: #f4f4f9;
+  color: #333;
+}
+
+.karat-h2 {
+  color: #151542;
+  margin-bottom: 20px;
+}
+
+.karat-label {
+  display: block;
+  margin: 15px 0px;
+  font-weight: bold;
+}
+
+.karat-input,
+.update-price-select,
+.karat-button {
+  padding: 10px 15px;
+  font-size: 1rem;
+  outline: none;
+  border: 1px solid rgb(231, 231, 231);
+  transition: border-color 0.3s ease;
+  background-color: #f4f5f9;
+}
+
+.karat-input:focus,
+.update-price-select:focus {
+  outline: none;
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+}
+
+.karat-button {
+  background-color: #2A3E5C;
+  color: #fff;
+  cursor: pointer;
+  border: none;
+  transition: background-color 0.3s ease;
+  margin-left: 20px;
+}
+
+.karat-section,
+.diamond-section {
+  margin: 20px auto;
+  max-width: 100%;
+  background-color: #fff;
+  padding: 20px;
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+}
+
+.karat-form,
+.diamond-form {
+  margin-bottom: 30px;
+}
+
+.karat-section,
+.diamond-section {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 20px;
+}
+
+.karat-form,
+.diamond-form,
+.karat-table-container,
+.diamond-table {
+  flex: 1;
+  min-width: 300px;
+}
+
+.karat-table-container,
+.diamond-table {
+  overflow-x: auto;
+}
+
+.update-karat-table {
+  width: 100%;
+  border-collapse: collapse;
+  margin-top: 20px;
+}
+
+.update-karat-table th,
+.update-karat-table td {
+  border: 1px solid #ddd;
+  padding: 10px;
+  text-align: left;
+}
+
+.update-karat-table th {
+  background-color: #2A3E5C;
+  color: white;
+}

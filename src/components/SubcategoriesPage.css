@@ -1,0 +1,145 @@
+.subcategories-page {
+  display: flex;
+  margin: 20px auto;
+  padding: 20px;
+  gap: 20px;
+  background: white;
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+}
+
+.subcategories-form {
+  width: 30%;
+  margin-right: 20px;
+}
+
+.subcategories-form h3 {
+  font-size: 24px;
+  margin-bottom: 10px;
+}
+
+.subcategories-form p {
+  font-size: 14px;
+  margin-bottom: 20px;
+}
+
+.subcategories-form label {
+  display: block;
+  font-weight: bold;
+  font-size: 20px;
+}
+
+.subcategories-form input[type="text"],
+.subcategories-form input[type="file"] {
+  padding: 10px 15px;
+  font-size: 1rem;
+  width: 100%;
+  outline: none;
+  border: 1px solid rgb(231, 231, 231);
+  transition: border-color 0.3s ease;
+  background-color: #f4f5f9;
+  margin: 15px 0;
+}
+
+.subcategories-form button {
+  background-color: #2A3E5C;
+  color: white;
+  padding: 10px 20px;
+  border: none;
+  cursor: pointer;
+  margin-top: 10px;
+}
+
+.subcategories-table {
+  width: 70%;
+}
+
+.subcategories-table table {
+  width: 100%;
+  border-collapse: collapse;
+}
+
+.subcategories-table th,
+.subcategories-table td {
+  text-align: left;
+  padding: 18px;
+  border-bottom: 1px solid #ddd;
+}
+
+.subcategories-table th {
+  background-color: #f0f0f0;
+  color: black;
+  font-size: 14px;
+}
+
+.subcategories-table img {
+  width: 60px;
+  height: 60px;
+  border-radius: 50%;
+}
+
+.subcategories-table .switch {
+  position: relative;
+  display: inline-block;
+  width: 34px;
+  height: 20px;
+}
+
+.subcategories-table .switch input {
+  opacity: 0;
+  width: 0;
+  height: 0;
+}
+
+.subcategories-table .slider {
+  position: absolute;
+  cursor: pointer;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background-color: #ccc;
+  transition: 0.4s;
+  border-radius: 20px;
+}
+
+.subcategories-table .slider:before {
+  position: absolute;
+  content: "";
+  height: 14px;
+  width: 14px;
+  left: 3px;
+  bottom: 3px;
+  background-color: white;
+  transition: 0.4s;
+  border-radius: 50%;
+}
+
+.subcategories-table input:checked + .slider {
+  background-color: #2A3E5C;
+}
+
+.subcategories-table input:checked + .slider:before {
+  transform: translateX(14px);
+}
+
+.subcategories-table button {
+  background: none;
+  border: none;
+  cursor: pointer;
+  font-size: 16px;
+}
+
+.image-preview {
+  display: block;
+  width: 100px;
+  height: auto;
+  margin-top: 10px;
+  border: 1px solid #ccc;
+  border-radius: 5px;
+}
+
+.subcategori-action button i {
+  color: #333;
+  font-size: 20px;
+  padding: 0 7px;
+}

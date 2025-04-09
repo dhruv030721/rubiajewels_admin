@@ -1,0 +1,122 @@
+.ready-order-list {
+  margin: 20px;
+  padding: 20px;
+  background-color: #ffffff;
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+  overflow-y: auto;
+  height: 100vh;
+}
+
+.ready-order-list h1 {
+  font-size: 28px;
+  margin-bottom: 15px;
+  color: black;
+}
+
+.ready-order-list p {
+  font-size: 16px;
+  color: #555;
+  margin-bottom: 20px;
+}
+
+.ready-order-controls {
+  display: flex;
+  gap: 15px;
+  margin-bottom: 25px;
+  align-items: center;
+}
+
+.ready-order-controls select {
+  padding: 10px;
+  border: 1px solid #ccc;
+  font-size: 14px;
+  background-color: #f9f9f9;
+}
+
+.ready-order-controls .ready-go-button,
+.ready-order-controls .ready-excel-button {
+  padding: 10px 20px;
+  border: none;
+  border-radius: 4px;
+  color: #fff;
+  font-size: 14px;
+  cursor: pointer;
+}
+
+.ready-order-controls .ready-go-button {
+  background-color: #2A3E5C;
+}
+
+.ready-order-table {
+  width: 100%;
+  border-collapse: collapse;
+  margin-top: 20px;
+  background-color: #fff;
+  overflow: hidden;
+  box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+}
+
+.ready-order-table th,
+.ready-order-table td {
+  padding: 14px 18px;
+  text-align: left;
+  border-bottom: 1px solid #eaeaea;
+}
+
+.ready-order-table th {
+  background-color: #f0f0f0;
+  font-size: 14px;
+  font-weight: bold;
+  text-transform: uppercase;
+  color: #333;
+}
+
+.ready-order-info {
+  font-size: 14px;
+  color: #333;
+  line-height: 1.6;
+}
+
+.ready-ready-status-badge {
+  display: inline-block;
+  padding: 5px 10px;
+  font-size: 12px;
+  color: #00a8f0;
+  background-color: #a0f2fa;
+  border-radius: 12px;
+  margin-top: 8px;
+  font-weight: bold;
+}
+
+.ready-product-info {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+}
+
+.ready-product-info img {
+  width: 60px;
+  height: 60px;
+  object-fit: cover;
+  border-radius: 4px;
+  border: 1px solid #ddd;
+}
+
+.ready-detail-button {
+  background-color: #2A3E5C;
+  color: #fff;
+  padding: 10px 14px;
+  border: none;
+  cursor: pointer;
+  font-size: 14px;
+  transition: background-color 0.3s ease;
+}
+
+.ready-detail-button:hover {
+  background-color: #334;
+}
+
+.order-details {
+  overflow-y: auto;
+  height: 120px;
+}
